@@ -183,14 +183,5 @@ The tests feed saved command outputs from all three operating systems into the p
 
 The [presentation slides](docs/presentation/Network-MCP-Diagnosis-Agent-slides.pdf) walk through each unit with diagrams.
 
-## Team
-
-| Name | Register number |
-|---|---|
-| ANBU CHELVAN | RA2411003011803 |
-| Charith Reddy B | RA2411003011823 |
-| Rupesh Reddy | RA2411003011831 |
-| Basith Nistar | RA2411003011771 |
-| Adhityan | RA2411003011764 |
 
 Released under the [MIT License](LICENSE).
