@@ -1,0 +1,27 @@
+[project]
+name = "network-mcp-diagnosis"
+version = "0.1.0"
+description = "A Network MCP server with a diagnosis agent that finds which network layer is broken."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.10,<2",
+  "psutil>=5.9",
+  "dnspython>=2.4",
+  "anthropic[mcp]>=1.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+netdiag = "netdiag.cli:main"
+netdiag-server = "netdiag.server:main"
+netdiag-agent = "netdiag.agent:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["netdiag"]
