@@ -1,0 +1,17 @@
+enable
+configure terminal
+hostname ISPRouter
+interface GigabitEthernet0/0
+ description Link to home
+ ip address 10.0.0.2 255.255.255.252
+ no shutdown
+interface GigabitEthernet0/1
+ description ISP server network
+ ip address 203.0.113.1 255.255.255.0
+ no shutdown
+exit
+router ospf 1
+ network 10.0.0.0 0.0.0.3 area 0
+ network 203.0.113.0 0.0.0.255 area 0
+end
+write memory

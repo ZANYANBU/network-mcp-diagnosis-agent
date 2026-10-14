@@ -3,13 +3,24 @@ name = "network-mcp-diagnosis"
 version = "0.1.0"
 description = "A Network MCP server with a diagnosis agent that finds which network layer is broken."
 readme = "README.md"
+license = { file = "LICENSE" }
 requires-python = ">=3.10"
+authors = [{ name = "V. Anbuchelvan" }]
+keywords = ["mcp", "model-context-protocol", "networking", "diagnostics", "ai-agent", "claude"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Topic :: System :: Networking :: Monitoring",
+]
 dependencies = [
   "mcp>=1.10,<2",
   "psutil>=5.9",
   "dnspython>=2.4",
   "anthropic[mcp]>=1.0",
 ]
+
+[project.urls]
+Repository = "https://github.com/ZANYANBU/network-mcp-diagnosis-agent"
 
 [project.optional-dependencies]
 test = ["pytest>=8"]

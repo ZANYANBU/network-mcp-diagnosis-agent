@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="960" height="420" rx="14" fill="#ffffff"/>
+  <text x="32" y="40" font-size="20" font-weight="700" fill="#0e1a2b">Diagnosing from the bottom layer up</text>
+  <text x="32" y="64" font-size="13.5" fill="#44546a">Each check depends on the ones below it, so the first failure is the answer.</text>
+  <g font-size="14">
+    <!-- rows from bottom (1) to top (6) -->
+    <g transform="translate(0,336)">
+      <rect x="32" y="0" width="150" height="46" rx="10" fill="#c0392b"/><text x="107" y="29" fill="#fff" font-weight="700" text-anchor="middle">Physical</text>
+      <text x="202" y="20" fill="#0e1a2b" font-weight="700">1  Is a real interface up?</text><text x="202" y="38" fill="#44546a" font-size="12.5">Wi-Fi signal in dBm, frame error counters</text>
+      <text x="640" y="29" fill="#44546a" font-size="13">Fails: cable, Wi-Fi off or out of range</text>
+    </g>
+    <g transform="translate(0,284)">
+      <rect x="32" y="0" width="150" height="46" rx="10" fill="#e8772e"/><text x="107" y="29" fill="#fff" font-weight="700" text-anchor="middle">Network</text>
+      <text x="202" y="20" fill="#0e1a2b" font-weight="700">2  A real IP address and a gateway?</text><text x="202" y="38" fill="#44546a" font-size="12.5">169.254.x.x means DHCP failed</text>
+      <text x="640" y="29" fill="#44546a" font-size="13">Fails: DHCP, wrong gateway</text>
+    </g>
+    <g transform="translate(0,232)">
+      <rect x="32" y="0" width="150" height="46" rx="10" fill="#e8772e"/><text x="107" y="29" fill="#fff" font-weight="700" text-anchor="middle">Network</text>
+      <text x="202" y="20" fill="#0e1a2b" font-weight="700">3  Does the router answer a ping?</text><text x="202" y="38" fill="#44546a" font-size="12.5">latency, loss and jitter are measured too</text>
+      <text x="640" y="29" fill="#44546a" font-size="13">Fails: between you and the router</text>
+    </g>
+    <g transform="translate(0,180)">
+      <rect x="32" y="0" width="150" height="46" rx="10" fill="#e8772e"/><text x="107" y="29" fill="#fff" font-weight="700" text-anchor="middle">Network</text>
+      <text x="202" y="20" fill="#0e1a2b" font-weight="700">4  Does 1.1.1.1 or 8.8.8.8 answer?</text><text x="202" y="38" fill="#44546a" font-size="12.5">if not, traceroute shows the last hop that replied</text>
+      <text x="640" y="29" fill="#44546a" font-size="13">Fails: router uplink or the ISP</text>
+    </g>
+    <g transform="translate(0,128)">
+      <rect x="32" y="0" width="150" height="46" rx="10" fill="#2e5aac"/><text x="107" y="29" fill="#fff" font-weight="700" text-anchor="middle">Application</text>
+      <text x="202" y="20" fill="#0e1a2b" font-weight="700">5  Does the name resolve (DNS)?</text><text x="202" y="38" fill="#44546a" font-size="12.5">retried through 1.1.1.1 to tell a dead DNS server from a bad name</text>
+      <text x="640" y="29" fill="#44546a" font-size="13">Fails: your DNS server, or a typo</text>
+    </g>
+    <g transform="translate(0,76)">
+      <rect x="32" y="0" width="150" height="46" rx="10" fill="#0e8c8c"/><text x="107" y="29" fill="#fff" font-weight="700" text-anchor="middle">Transport + App</text>
+      <text x="202" y="20" fill="#0e1a2b" font-weight="700">6  TCP handshake, then the web page</text><text x="202" y="38" fill="#44546a" font-size="12.5">port 443 open, HTTP status code</text>
+      <text x="640" y="29" fill="#44546a" font-size="13">Fails: firewall, or the site itself</text>
+    </g>
+  </g>
+  <path d="M 912 380 L 912 92" stroke="#9aaab9" stroke-width="3" fill="none"/>
+  <path d="M 902 104 L 912 84 L 922 104 z" fill="#9aaab9"/>
+</svg>

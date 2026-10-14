@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <rect width="960" height="330" rx="14" fill="#ffffff"/>
+  <text x="32" y="40" font-size="20" font-weight="700" fill="#0e1a2b">Packet Tracer demo: addressing plan</text>
+  <rect x="24" y="64" width="300" height="242" rx="12" fill="#eef4f6"/>
+  <text x="40" y="88" font-size="12.5" fill="#44546a" font-weight="700">HOME LAN · 192.168.1.0/24 · DHCP</text>
+  <rect x="636" y="64" width="300" height="242" rx="12" fill="#eef4f6"/>
+  <text x="652" y="88" font-size="12.5" fill="#44546a" font-weight="700">ISP SIDE · 203.0.113.0/24</text>
+  <g stroke="#0e1a2b" stroke-width="2.2">
+    <line x1="140" y1="132" x2="200" y2="186"/><line x1="140" y1="262" x2="200" y2="206"/>
+    <line x1="268" y1="196" x2="372" y2="196"/>
+    <line x1="472" y1="196" x2="512" y2="196" stroke-dasharray="7 5"/>
+    <line x1="612" y1="196" x2="692" y2="196"/>
+    <line x1="760" y1="186" x2="810" y2="132"/><line x1="760" y1="206" x2="810" y2="262"/>
+  </g>
+  <g font-size="13" text-anchor="middle">
+    <rect x="44" y="108" width="100" height="46" rx="9" fill="#2e5aac"/><text x="94" y="128" fill="#fff" font-weight="700">PC0</text><text x="94" y="145" fill="#dde6f7" font-size="11.5">192.168.1.21</text>
+    <rect x="44" y="240" width="100" height="46" rx="9" fill="#2e5aac"/><text x="94" y="260" fill="#fff" font-weight="700">PC1</text><text x="94" y="277" fill="#dde6f7" font-size="11.5">192.168.1.22</text>
+    <rect x="198" y="176" width="72" height="40" rx="9" fill="#44546a"/><text x="234" y="201" fill="#fff" font-weight="700">Switch0</text>
+    <rect x="372" y="168" width="100" height="56" rx="9" fill="#0e8c8c"/><text x="422" y="190" fill="#fff" font-weight="700">HomeRouter</text><text x="422" y="208" fill="#d7f5ee" font-size="11">DHCP server</text>
+    <rect x="512" y="168" width="100" height="56" rx="9" fill="#e8772e"/><text x="562" y="190" fill="#fff" font-weight="700">ISPRouter</text><text x="562" y="208" fill="#fff3e8" font-size="11">OSPF area 0</text>
+    <rect x="690" y="176" width="72" height="40" rx="9" fill="#44546a"/><text x="726" y="201" fill="#fff" font-weight="700">Switch1</text>
+    <rect x="808" y="108" width="116" height="46" rx="9" fill="#0e1a2b"/><text x="866" y="128" fill="#fff" font-weight="700">DNS-Server</text><text x="866" y="145" fill="#c9d3dd" font-size="11.5">203.0.113.53</text>
+    <rect x="808" y="240" width="116" height="46" rx="9" fill="#0e1a2b"/><text x="866" y="260" fill="#fff" font-weight="700">youtube.com</text><text x="866" y="277" fill="#c9d3dd" font-size="11.5">203.0.113.80</text>
+  </g>
+  <g font-size="11.5" fill="#44546a" text-anchor="middle">
+    <text x="320" y="186">G0/0 .1</text>
+    <text x="492" y="160">10.0.0.0/30</text><text x="492" y="246">.1 ↔ .2</text>
+    <text x="652" y="186">G0/1 .1</text>
+  </g>
+</svg>

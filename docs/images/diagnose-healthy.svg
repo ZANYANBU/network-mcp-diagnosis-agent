@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="755" height="387" viewBox="0 0 755 387">
+<rect width="100%" height="100%" rx="10" fill="#0e1a2b"/>
+<circle cx="22" cy="18" r="6" fill="#f87171"/><circle cx="42" cy="18" r="6" fill="#fbbf24"/><circle cx="62" cy="18" r="6" fill="#4ade80"/>
+<text x="378" y="23" text-anchor="middle" fill="#9aaab9" font-family="Menlo, Consolas, monospace" font-size="12">netdiag: a working home network</text>
+<g fill="#d7f5ee" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5">
+<text x="24" y="58" xml:space="preserve">$ netdiag diagnose youtube.com</text>
+<text x="24" y="77" xml:space="preserve">Diagnosis for youtube.com</text>
+<text x="24" y="96" xml:space="preserve"></text>
+<text x="24" y="115" xml:space="preserve"> 1. [<tspan fill="#4ade80" font-weight="700">PASS</tspan>] Physical    Network interface up: active interfaces: en0</text>
+<text x="24" y="134" xml:space="preserve"> 2. [<tspan fill="#4ade80" font-weight="700">PASS</tspan>] Physical    Wi-Fi signal: -72 dBm (weak)</text>
+<text x="24" y="153" xml:space="preserve"> 3. [<tspan fill="#4ade80" font-weight="700">PASS</tspan>] Network     Has an IP address: IPv4: 192.168.1.4</text>
+<text x="24" y="172" xml:space="preserve"> 4. [<tspan fill="#4ade80" font-weight="700">PASS</tspan>] Network     Default gateway set: gateway: 192.168.1.1</text>
+<text x="24" y="191" xml:space="preserve"> 5. [<tspan fill="#4ade80" font-weight="700">PASS</tspan>] Network     Reach the gateway: 192.168.1.1: 3/3 replies, avg 4.0 ms, loss 0%</text>
+<text x="24" y="210" xml:space="preserve"> 6. [<tspan fill="#4ade80" font-weight="700">PASS</tspan>] Network     Reach the Internet by IP: 1.1.1.1: 3/3 replies, avg 8.9 ms, loss 0%</text>
+<text x="24" y="229" xml:space="preserve"> 7. [<tspan fill="#4ade80" font-weight="700">PASS</tspan>] Application DNS lookup of youtube.com: 142.251.223.174</text>
+<text x="24" y="248" xml:space="preserve"> 8. [<tspan fill="#4ade80" font-weight="700">PASS</tspan>] Transport   TCP port 443 on youtube.com: connected in 19.3 ms</text>
+<text x="24" y="267" xml:space="preserve"> 9. [<tspan fill="#4ade80" font-weight="700">PASS</tspan>] Application Web page from youtube.com: HTTP 200 in 635.1 ms</text>
+<text x="24" y="286" xml:space="preserve"></text>
+<text x="24" y="305" xml:space="preserve"><tspan fill="#ffffff" font-weight="700">Everything works: the connection, the Internet, DNS and youtube.com itself. A few things are</tspan></text>
+<text x="24" y="324" xml:space="preserve">    worth a look below.</text>
+<text x="24" y="343" xml:space="preserve"><tspan fill="#93c5fd" font-weight="700">Fix:</tspan> See the warnings.</text>
+<text x="24" y="362" xml:space="preserve"><tspan fill="#fbbf24" font-weight="700">Warning:</tspan> Wi-Fi signal is weak; move closer to the router.</text>
+</g></svg>

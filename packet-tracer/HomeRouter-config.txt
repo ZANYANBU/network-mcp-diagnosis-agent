@@ -1,0 +1,23 @@
+enable
+configure terminal
+hostname HomeRouter
+interface GigabitEthernet0/0
+ description Home LAN
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+interface GigabitEthernet0/1
+ description Link to ISP
+ ip address 10.0.0.1 255.255.255.252
+ no shutdown
+exit
+ip dhcp excluded-address 192.168.1.1 192.168.1.20
+ip dhcp pool HOME
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ dns-server 203.0.113.53
+exit
+router ospf 1
+ network 192.168.1.0 0.0.0.255 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+end
+write memory

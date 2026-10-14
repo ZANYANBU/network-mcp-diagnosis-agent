@@ -127,10 +127,10 @@ def diagnose(target: str = "google.com", port: int = 443, t=default_tools) -> Re
     # 5. DNS: can the name be turned into an address?
     looked = t.dns_lookup(target)
     if not r.add(Step("Application", f"DNS lookup of {target}", looked["ok"],
-                      ", ".join(looked.get("addresses", [])) or looked.get("error", "no answer"))):
+                      _addresses(looked) or looked.get("error", "no answer"))):
         public = t.dns_lookup(target, server=PUBLIC_IPS[0])
         if public["ok"]:
-            r.steps.append(Step("Application", "DNS lookup through 1.1.1.1", True, ", ".join(public["addresses"])))
+            r.steps.append(Step("Application", "DNS lookup through 1.1.1.1", True, _addresses(public)))
             return r.fail("Application", "The Internet works, but this computer's DNS server is not answering, so names cannot be found.",
                           "Change the DNS server to 1.1.1.1 or 8.8.8.8, or restart the router.")
         return r.fail("Application", f"No DNS server can find {target}. The name may be wrong or the site may not exist.",
@@ -157,6 +157,12 @@ def diagnose(target: str = "google.com", port: int = 443, t=default_tools) -> Re
         r.diagnosis += " A few things are worth a look below."
     r.fix = "Nothing to fix." if not r.warnings else "See the warnings."
     return r
+
+
+def _addresses(result: dict, limit: int = 2) -> str:
+    found = result.get("addresses", [])
+    more = f" (+{len(found) - limit} more)" if len(found) > limit else ""
+    return ", ".join(found[:limit]) + more
 
 
 def _ping_text(host: str, res: dict) -> str:
