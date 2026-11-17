@@ -95,9 +95,22 @@ def diagnose(target: str = "google.com", port: int = 443, t=default_tools) -> Re
                       "Set the gateway to the router's address, or switch the connection to automatic (DHCP).")
 
     # 3. Local network: can we reach the router?
+    # Many campus and office routers drop ping. Before blaming the router, try a real TCP
+    # connection past it: if that works, the router is fine and only ICMP is filtered.
+    probe = {}
+
+    def beyond() -> bool:
+        if "res" not in probe:
+            probe["res"] = t.port_check(target, port)
+        return probe["res"]["open"]
+
     gw = t.ping(gateway, count=3)
-    if not r.add(Step("Network", "Reach the gateway", gw["reachable"],
-                      _ping_text(gateway, gw), _latency_warning(gw, "Local network"))):
+    if not gw["reachable"] and beyond():
+        r.add(Step("Network", "Reach the gateway", True,
+                   f"{gateway} ignores ping, but a TCP connection to {target}:{port} through it worked",
+                   f"The router at {gateway} drops ping (ICMP filtered); this is common on campus networks."))
+    elif not r.add(Step("Network", "Reach the gateway", gw["reachable"],
+                        _ping_text(gateway, gw), _latency_warning(gw, "Local network"))):
         in_arp = any(e["ip"] == gateway for e in t.arp_table())
         if in_arp:
             r.warnings.append("The router is in the ARP table, so it may simply be ignoring ping.")
@@ -111,7 +124,11 @@ def diagnose(target: str = "google.com", port: int = 443, t=default_tools) -> Re
         if res["reachable"]:
             internet = (ip, res)
             break
-    if not r.add(Step("Network", "Reach the Internet by IP", internet is not None,
+    if internet is None and beyond():
+        r.add(Step("Network", "Reach the Internet by IP", True,
+                   f"1.1.1.1 and 8.8.8.8 ignore ping, but TCP to {target}:{port} worked",
+                   "Ping to the Internet is blocked on this network (ICMP filtered); TCP traffic flows normally."))
+    elif not r.add(Step("Network", "Reach the Internet by IP", internet is not None,
                       _ping_text(internet[0], internet[1]) if internet else "1.1.1.1 and 8.8.8.8 did not reply",
                       _latency_warning(internet[1], "Internet") if internet else None)):
         trace = t.traceroute(PUBLIC_IPS[1], max_hops=12)

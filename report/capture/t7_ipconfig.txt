@@ -1,0 +1,17 @@
+$ netdiag ipconfig
+{
+  "interfaces": [
+    {
+      "name": "en0",
+      "ipv4": [
+        "10.9.187.164"
+      ],
+      "mac": "xx:xx:xx:xx:xx:xx"
+    }
+  ],
+  "default_gateway": "10.9.0.1",
+  "dns_servers": [
+    "172.16.111.18",
+    "172.16.116.14"
+  ]
+}

@@ -1,0 +1,17 @@
+$ netdiag diagnose youtube.com
+Diagnosis for youtube.com
+
+ 1. [PASS] Physical    Network interface up: active interfaces: en0
+ 2. [PASS] Physical    Wi-Fi signal: -60 dBm (strong)
+ 3. [PASS] Network     Has an IP address: IPv4: 10.9.187.164
+ 4. [PASS] Network     Default gateway set: gateway: 10.9.0.1
+ 5. [PASS] Network     Reach the gateway: 10.9.0.1 ignores ping, but a TCP connection to youtube.com:443 through it worked
+ 6. [PASS] Network     Reach the Internet by IP: 1.1.1.1 and 8.8.8.8 ignore ping, but TCP to youtube.com:443 worked
+ 7. [PASS] Application DNS lookup of youtube.com: 142.251.221.174
+ 8. [PASS] Transport   TCP port 443 on youtube.com: connected in 21.0 ms
+ 9. [PASS] Application Web page from youtube.com: HTTP 200 in 1208.9 ms
+
+Everything works: the connection, the Internet, DNS and youtube.com itself. A few things are worth a look below.
+Fix: See the warnings.
+Warning: The router at 10.9.0.1 drops ping (ICMP filtered); this is common on campus networks.
+Warning: Ping to the Internet is blocked on this network (ICMP filtered); TCP traffic flows normally.

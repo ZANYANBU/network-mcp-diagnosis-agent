@@ -1,0 +1,21 @@
+$ python mcp_client_demo.py
+connected to MCP server: network-diagnosis (protocol 2025-11-25)
+
+11 tools offered:
+  diagnose     Run the full bottom-up diagnosis against a site and say which layer fa
+  interfaces   List network interfaces: up or down, IPv4/IPv6 addresses, MAC, speed a
+  wifi_signal  Wi-Fi signal strength in dBm and a strong/ok/weak rating, if the compu
+  ip_config    This computer's IPv4 addresses, default gateway and DNS servers, like 
+  ping         Ping a host: replies, packet loss, average latency and jitter.
+  traceroute   List every router on the path to a host and where the replies stop.
+  dns_lookup   Resolve a name to IP addresses with the system's DNS, or with a given 
+  port_check   Try a TCP three-way handshake to host:port and report open, refused or
+  http_check   Request a web page's headers and report the HTTP status code and respo
+  route_table  The computer's routing table, including the default route (0.0.0.0/0).
+  arp_table    IP-to-MAC address pairs this computer has learned on the local network
+
+call_tool dns_lookup {"name": "youtube.com"}
+  -> {   "name": "youtube.com",   "ok": true,   "addresses": [     "142.250.77.110"   ],   "server": "172.16.111.18",   "time_ms": 56.1 }
+
+call_tool http_check {"url": "https://www.youtube.com"}
+  -> {   "url": "https://www.youtube.com",   "ok": true,   "status": 200,   "time_ms": 319.3 }

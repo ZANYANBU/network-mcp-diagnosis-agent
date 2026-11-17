@@ -1,0 +1,34 @@
+$ netdiag dns youtube.com
+{
+  "name": "youtube.com",
+  "ok": true,
+  "addresses": [
+    "142.250.77.110"
+  ],
+  "server": "172.16.111.18",
+  "time_ms": 59.4
+}
+
+$ netdiag port youtube.com 443
+{
+  "host": "youtube.com",
+  "port": 443,
+  "open": true,
+  "time_ms": 32.2
+}
+
+$ netdiag http https://www.youtube.com
+{
+  "url": "https://www.youtube.com",
+  "ok": true,
+  "status": 200,
+  "time_ms": 369.4
+}
+
+$ netdiag wifi
+{
+  "available": true,
+  "rssi_dbm": -60,
+  "noise_dbm": -90,
+  "quality": "strong"
+}

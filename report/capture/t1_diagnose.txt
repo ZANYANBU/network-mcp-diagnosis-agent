@@ -1,0 +1,12 @@
+$ netdiag diagnose youtube.com
+Diagnosis for youtube.com
+
+ 1. [PASS] Physical    Network interface up: active interfaces: en0
+ 2. [PASS] Physical    Wi-Fi signal: -62 dBm (ok)
+ 3. [PASS] Network     Has an IP address: IPv4: 10.9.187.164
+ 4. [PASS] Network     Default gateway set: gateway: 10.9.0.1
+ 5. [FAIL] Network     Reach the gateway: 10.9.0.1: no replies
+
+Problem at the Network layer. The router at 10.9.0.1 does not answer, so the problem is between this computer and the router.
+Fix: Check the cable or Wi-Fi, then restart the router.
+Warning: Local network: 100% of packets were lost, which feels like freezing and buffering.

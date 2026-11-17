@@ -1,0 +1,98 @@
+$ netdiag traceroute youtube.com
+{
+  "host": "youtube.com",
+  "hops": [
+    {
+      "hop": 1,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 2,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 3,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 4,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 5,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 6,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 7,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 8,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 9,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 10,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 11,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 12,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 13,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 14,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    },
+    {
+      "hop": 15,
+      "address": null,
+      "delay_ms": null,
+      "timed_out": true
+    }
+  ],
+  "last_responding_hop": null,
+  "reached": false
+}

@@ -1,0 +1,17 @@
+$ netdiag traceroute youtube.com
+ hop  1  * * *  (no reply)
+ hop  2  * * *  (no reply)
+ hop  3  * * *  (no reply)
+ hop  4  * * *  (no reply)
+ hop  5  * * *  (no reply)
+ hop  6  * * *  (no reply)
+ hop  7  * * *  (no reply)
+ hop  8  * * *  (no reply)
+ hop  9  * * *  (no reply)
+ hop 10  * * *  (no reply)
+ hop 11  * * *  (no reply)
+ hop 12  * * *  (no reply)
+ hop 13  * * *  (no reply)
+ hop 14  * * *  (no reply)
+ hop 15  * * *  (no reply)
+last_responding_hop: None
